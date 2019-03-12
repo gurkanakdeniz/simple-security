@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="layouts/default">
+	<head th:replace="fragments/head :: head(titleText='Admin')"></head>	
+  <body>
+    <div class="container-fluid admin-container" layout:fragment="content">
+        <div class="container content-container">
+          <div id="main-content">
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

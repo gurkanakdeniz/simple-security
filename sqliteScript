@@ -1,0 +1,29 @@
+CREATE TABLE hibernate_sequence (next_val BIGINT);
+
+
+CREATE TABLE role (
+  role_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  role varchar(255) DEFAULT NULL
+);
+
+CREATE TABLE user (
+  user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  active BIT DEFAULT NULL,
+  email varchar(255) NOT NULL,
+  last_name varchar(255) NOT NULL,
+  name varchar(255) NOT NULL,
+  password varchar(255) NOT NULL
+);
+
+CREATE TABLE `user_role` (
+  user_id INTEGER NOT NULL,
+  role_id INTEGER NOT NULL,
+  PRIMARY KEY (user_id, role_id),
+  CONSTRAINT `FK859n2jvi8ivhui0rl0esws6o` FOREIGN KEY (user_id) REFERENCES user (user_id),
+  CONSTRAINT `FKa68196081fvovjhkek5m97n3y` FOREIGN KEY (role_id) REFERENCES role (role_id)
+);
+
+INSERT INTO `role` VALUES (1,'ADMIN');
+INSERT INTO `role` VALUES (2,'USER');
+
+CREATE TABLE sqlite_sequence(name,seq);
